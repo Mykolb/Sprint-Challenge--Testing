@@ -18,11 +18,11 @@
 [] npx gitignore node (to create a gitignore file)
 
 ## ORGANIZATION
-[] server file 
-[] index file 
+[x] server file 
+[x] index file 
 [] routes folder
     [] routes files
-    [] models
+    [x] models
 [] migrations
 [] knex file
 [] seeds files 
