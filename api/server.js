@@ -4,12 +4,12 @@ const express = require('express');
 
 const server = express();
 
-// const db = [];
+const needArray = [];
 
 server.use(express.json());
 
 server.get('/', async (req, res) => {
-  res.status(200).json({ api: 'Time to Sprint!' });
+  res.status(200).json(needArray);
 });
 
 

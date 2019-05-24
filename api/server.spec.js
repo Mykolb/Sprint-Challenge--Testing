@@ -12,6 +12,9 @@ describe('server', () => {
         expect(process.env.DB_ENV).toBe('testing')
     })
     
+    beforeEach(async() => {
+        await db('games').truncate(); //truncate clears db before each test 
+    })
 
 describe('endpoints', () => {
         describe('GET /', () => {
@@ -30,13 +33,29 @@ it('should return JSON', async() => {
     const res = await request(server).get('/')
     expect(res.type).toBe('application/json')
 })
+
 //working
-it('should return {api: "Time to Sprint!"}', async() => {
-    const res = await request(server).get('/')
-    expect(res.body).toEqual({ api:'Time to Sprint!' })
+
+// it('should return {api: "Time to Sprint!"}', async() => {
+//     const res = await request(server).get('/')
+//     expect(res.body).toEqual({ api:'Time to Sprint!' })
+// })
+
+//Working!
+it('should return an array', async () => {
+    const res = await request(server).get('/');
+    expect(Array.isArray(res.body)).toEqual(true)
+})
+
+//Working
+//had to uncomment the api  get b/c it was returning an object instead of an array 
+it('should return an empty array hopefully', async () => {
+    const res = await request(server).get('/');
+   expect(res.body).toEqual([])
 })
 
 })
+//********* POST TESTS ************ */
 describe('POST /cats endpoint', () => {
     describe('insert()', () => {
         beforeEach(async() => {
@@ -56,7 +75,7 @@ describe('POST /cats endpoint', () => {
     it("should return a 200 status code", async () => {
         const response = await request(server)
           .post("/games")
-          .send({ title: 'GTO', genre: 'action'});
+          .send({title: 'GTO', genre: 'action'});
         expect(response.status).toEqual(200);
       });
 })

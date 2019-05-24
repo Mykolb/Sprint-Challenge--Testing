@@ -56,7 +56,7 @@
 - run `npx knex migrate:latest` to update changes made to table 
 - SAVE FILES AND CHECK YOUR SERVER
 - need to create a migration for every changes made, i.e. adding email or creating another table, etc
-- `npx knex migrate:rollback` deletes last migration added 
+- `npx knex migrate:rollback` delete last migration added 
 
 
 ##TO SEED
