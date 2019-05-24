@@ -2,7 +2,7 @@
 [] yarn init (set up files)
 [x] yarn install (node modules)
 [] yarn add express, helmet, morgan 
-[] yarn add nodemon --dev (for deployment)
+[x] yarn add nodemon --dev (for deployment)
 [x] yarn add dotenv
 [x] yarn add knex sqlite3
 [] yarn add bcryptjs
@@ -24,11 +24,11 @@
     [] routes files
     [x] models
 [] migrations
-[] knex file
-[] seeds files 
+[x] knex file
+[] seeds files  
 [] data folder
-[] dbConfig file 
-[]  env file
+[x] dbConfig file 
+[x]  env file
 
 ## CREATING REACT APP IS SAME FOLDER
 [] yarn install (outside of app for node modules, optional)
